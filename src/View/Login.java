@@ -123,6 +123,7 @@ public class Login extends javax.swing.JFrame {
         if (valida) {
             Menu menu = new Menu();
             menu.setVisible(true);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Usuário ou senha incorretos!");
         }
