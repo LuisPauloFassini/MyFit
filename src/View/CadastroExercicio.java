@@ -156,6 +156,9 @@ public class CadastroExercicio extends javax.swing.JFrame {
         this.jCheckBoxAtivo.setSelected(false);
     }
     
+    public void listar() {
+    }
+    
     public static void main(String args[]) {
 
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

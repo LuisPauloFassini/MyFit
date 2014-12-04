@@ -9,28 +9,27 @@ public class ConsultaExercicios extends javax.swing.JDialog {
     private Exercicio exercicio = new Exercicio();
     private ExercicioDAO exercicioDAO = new ExercicioDAO();
     private DefaultTableModel model;
+    private CadastroExercicio cadastroExercicio;
 
-    public ConsultaExercicios() {
+    public ConsultaExercicios(CadastroExercicio cadastroExerc) {
         initComponents();
         listar("");
+        this.cadastroExercicio = cadastroExerc;
+    }
+    
+    public ConsultaExercicios() {
+        initComponents();
     }
     
     public void listar(String nome){
         ArrayList<Exercicio> listaExercicio = this.exercicioDAO.listar(nome);
         this.model = (DefaultTableModel) jTable1.getModel();
         
-        int size = this.model.getRowCount(); 
-        if (size > 0) {
-            for(int i = 0; i < size; i++) {  
-                this.model.removeRow(i);  
-            }
-        }
+        this.model.setRowCount(0);
             
         for (Exercicio ex : listaExercicio) {
             this.model.addRow(new Object[]{ex.getId(),ex.getNome(), ex.getTipoMemb(), ex.isAtivo()});
         }
-        
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -44,7 +43,6 @@ public class ConsultaExercicios extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButtonConfirma = new javax.swing.JButton();
-        jButtonCancela = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consulta de Exercícios");
@@ -112,12 +110,11 @@ public class ConsultaExercicios extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jButtonConfirma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/confirmar.png"))); // NOI18N
         jButtonConfirma.setText("Confirmar");
-
-        jButtonCancela.setText("Cancelar");
-        jButtonCancela.addActionListener(new java.awt.event.ActionListener() {
+        jButtonConfirma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelaActionPerformed(evt);
+                jButtonConfirmaActionPerformed(evt);
             }
         });
 
@@ -129,11 +126,10 @@ public class ConsultaExercicios extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonConfirma)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonCancela))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonConfirma)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -144,9 +140,7 @@ public class ConsultaExercicios extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonConfirma)
-                    .addComponent(jButtonCancela))
+                .addComponent(jButtonConfirma)
                 .addContainerGap())
         );
 
@@ -157,9 +151,9 @@ public class ConsultaExercicios extends javax.swing.JDialog {
         listar(this.jTextFieldNome.getText());
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
-    private void jButtonCancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelaActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButtonCancelaActionPerformed
+    private void jButtonConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmaActionPerformed
+
+    }//GEN-LAST:event_jButtonConfirmaActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -170,7 +164,6 @@ public class ConsultaExercicios extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCancela;
     private javax.swing.JButton jButtonConfirma;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JLabel jLabelNome;

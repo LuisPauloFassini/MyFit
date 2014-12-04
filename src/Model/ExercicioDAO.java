@@ -59,7 +59,7 @@ public class ExercicioDAO {
                 stmt.setString(2, exercicio.getTipoMemb());
                 stmt.setBoolean(3, exercicio.isAtivo());
             } else {
-                sql = "insert into exercico (nome, tipoMemb, ativo) values (?, ?, ?)";
+                sql = "update exercico set nome=?, tipoMemb=?, ativo=? where id=?";
                 stmt = connection.prepareStatement(sql);
                 stmt.setString(1, exercicio.getNome());
                 stmt.setString(2, exercicio.getTipoMemb());

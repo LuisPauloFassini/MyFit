@@ -1,12 +1,16 @@
 package View;
 
+import Model.Usuario;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Menu extends javax.swing.JFrame {
+    
+    private Usuario usuario;
 
-    public Menu() {
+    public Menu(Usuario usuario) {
         initComponents();
+        this.usuario = usuario;
     }
 
     @SuppressWarnings("unchecked")
@@ -46,6 +50,11 @@ public class Menu extends javax.swing.JFrame {
         jMeusDadosMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         jMeusDadosMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/meusDados3.png"))); // NOI18N
         jMeusDadosMenuItem.setText("Meus Dados");
+        jMeusDadosMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMeusDadosMenuItemActionPerformed(evt);
+            }
+        });
         jMeusDadosMenu.add(jMeusDadosMenuItem);
         jMeusDadosMenu.add(jSeparator3);
 
@@ -111,48 +120,25 @@ public class Menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCadDiarioTreiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCadDiarioTreiMenuItemActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jCadDiarioTreiMenuItemActionPerformed
 
     private void jCadExercMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCadExercMenuItemActionPerformed
-        // TODO add your handling code here:
         CadastroExercicio cad = new CadastroExercicio();
         cad.setVisible(true);
     }//GEN-LAST:event_jCadExercMenuItemActionPerformed
 
-    public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
-    }
+    private void jMeusDadosMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMeusDadosMenuItemActionPerformed
+        MeusDados meusdados = new MeusDados(this.usuario);
+        meusdados.setVisible(true);
+    }//GEN-LAST:event_jMeusDadosMenuItemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem jCadDiarioTreiMenuItem;

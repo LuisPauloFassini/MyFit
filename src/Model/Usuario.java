@@ -20,13 +20,12 @@ public class Usuario {
     private String  senha;
     private Date    dtNasci;
 
-    public Usuario(int id, String nome, String sobrenome, String login, String senha, Date dtNasci) {
+    public Usuario(int id, String nome, String sobrenome, String login, String senha) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.login = login;
         this.senha = senha;
-        this.dtNasci = dtNasci;
     }
 
     public int getId() {
