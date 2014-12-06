@@ -103,7 +103,7 @@ public class Login extends javax.swing.JFrame {
         UsuarioDAO usuDAO = new UsuarioDAO();
         valida = usuDAO.validaLogin(this.jTextFieldLogin.getText(), this.jPasswordFieldSenha.getText());
         if (valida) {
-            Menu menu = new Menu();
+            Menu menu = new Menu(usuDAO.getUsuario());
             menu.setVisible(true);
             this.dispose();
         } else {

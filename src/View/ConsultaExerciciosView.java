@@ -3,34 +3,46 @@ package View;
 import Model.Exercicio;
 import Model.ExercicioDAO;
 import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
-public class ConsultaExercicios extends javax.swing.JDialog {
-    private Exercicio exercicio = new Exercicio();
-    private ExercicioDAO exercicioDAO = new ExercicioDAO();
-    private DefaultTableModel model;
+public class ConsultaExerciciosView extends javax.swing.JDialog {
 
-    public ConsultaExercicios() {
+    public ConsultaExerciciosView() {
         initComponents();
-        listar("");
     }
-    
-    public void listar(String nome){
-        ArrayList<Exercicio> listaExercicio = this.exercicioDAO.listar(nome);
-        this.model = (DefaultTableModel) jTable1.getModel();
-        
-        int size = this.model.getRowCount(); 
-        if (size > 0) {
-            for(int i = 0; i < size; i++) {  
-                this.model.removeRow(i);  
-            }
-        }
-            
-        for (Exercicio ex : listaExercicio) {
-            this.model.addRow(new Object[]{ex.getId(),ex.getNome(), ex.getTipoMemb(), ex.isAtivo()});
-        }
-        
-        
+
+    public JButton getjButtonConfirma() {
+        return jButtonConfirma;
+    }
+
+    public void setjButtonConfirma(JButton jButtonConfirma) {
+        this.jButtonConfirma = jButtonConfirma;
+    }
+
+    public JButton getjButtonPesquisar() {
+        return jButtonPesquisar;
+    }
+
+    public void setjButtonPesquisar(JButton jButtonPesquisar) {
+        this.jButtonPesquisar = jButtonPesquisar;
+    }
+
+    public JTable getjTableExercicios() {
+        return jTableExercicios;
+    }
+
+    public void setjTableExercicios(JTable jTable1) {
+        this.jTableExercicios = jTable1;
+    }
+
+    public JTextField getjTextFieldNome() {
+        return jTextFieldNome;
+    }
+
+    public void setjTextFieldNome(JTextField jTextFieldNome) {
+        this.jTextFieldNome = jTextFieldNome;
     }
 
     @SuppressWarnings("unchecked")
@@ -42,9 +54,8 @@ public class ConsultaExercicios extends javax.swing.JDialog {
         jTextFieldNome = new javax.swing.JTextField();
         jButtonPesquisar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableExercicios = new javax.swing.JTable();
         jButtonConfirma = new javax.swing.JButton();
-        jButtonCancela = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consulta de Exercícios");
@@ -56,11 +67,6 @@ public class ConsultaExercicios extends javax.swing.JDialog {
 
         jButtonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lupa2.png"))); // NOI18N
         jButtonPesquisar.setText("Pesquisar");
-        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPesquisarActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanelPesquisarLayout = new javax.swing.GroupLayout(jPanelPesquisar);
         jPanelPesquisar.setLayout(jPanelPesquisarLayout);
@@ -87,7 +93,7 @@ public class ConsultaExercicios extends javax.swing.JDialog {
 
         jPanelPesquisarLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButtonPesquisar, jLabelNome, jTextFieldNome});
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableExercicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -110,16 +116,10 @@ public class ConsultaExercicios extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableExercicios);
 
+        jButtonConfirma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/confirmar.png"))); // NOI18N
         jButtonConfirma.setText("Confirmar");
-
-        jButtonCancela.setText("Cancelar");
-        jButtonCancela.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,11 +129,10 @@ public class ConsultaExercicios extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonConfirma)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonCancela))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonConfirma)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -143,40 +142,21 @@ public class ConsultaExercicios extends javax.swing.JDialog {
                 .addComponent(jPanelPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonConfirma)
-                    .addComponent(jButtonCancela))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonConfirma)
+                .addGap(10, 10, 10))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
-        listar(this.jTextFieldNome.getText());
-    }//GEN-LAST:event_jButtonPesquisarActionPerformed
-
-    private void jButtonCancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelaActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButtonCancelaActionPerformed
-
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ConsultaExercicios().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCancela;
     private javax.swing.JButton jButtonConfirma;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JPanel jPanelPesquisar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableExercicios;
     private javax.swing.JTextField jTextFieldNome;
     // End of variables declaration//GEN-END:variables
 }

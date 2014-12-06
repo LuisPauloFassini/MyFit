@@ -46,8 +46,7 @@ public class ExercicioDAO {
         }
     }
     
-    public void salvar(Exercicio exercicio) {
-        
+    public boolean salvar(Exercicio exercicio) {
         try {
             String sql = "";
             PreparedStatement stmt = null;
@@ -59,16 +58,19 @@ public class ExercicioDAO {
                 stmt.setString(2, exercicio.getTipoMemb());
                 stmt.setBoolean(3, exercicio.isAtivo());
             } else {
-                sql = "insert into exercico (nome, tipoMemb, ativo) values (?, ?, ?)";
+                sql = "update exercicio set nome=?, tipoMemb=?, ativo=? where id=?";
                 stmt = connection.prepareStatement(sql);
                 stmt.setString(1, exercicio.getNome());
                 stmt.setString(2, exercicio.getTipoMemb());
                 stmt.setBoolean(3, exercicio.isAtivo());
+                stmt.setInt(4, exercicio.getId());
             }
             stmt.execute();
             stmt.close();
+            return true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            return false;
         }
     }
     
