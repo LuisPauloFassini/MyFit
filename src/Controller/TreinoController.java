@@ -6,9 +6,11 @@ import Model.ListTreinoDAO;
 import Model.Treino;
 import Model.TreinoDAO;
 import View.ConsultaExerciciosView;
+import View.ConsultaTreinoView;
 import View.TreinoView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -51,7 +53,10 @@ public class TreinoController implements ActionListener {
                 JOptionPane.showMessageDialog(treinoView, "Exercício Excluído!");
             }
         } else if (e.getSource() == this.treinoView.getjButtonPesquisar()) {
-            
+            ConsultaTreinoView consultaTreino = new ConsultaTreinoView();
+            ConsultaTreinoController consultaTreinoController = new ConsultaTreinoController(consultaTreino, this);
+            consultaTreinoController.listar("");
+            consultaTreinoController.getConsultaTreinoView().setVisible(true);
         } else if (e.getSource() == this.treinoView.getjButtonSalvarTreino()) {
             if (this.treinoView.getjTextFieldNome().equals("")) {
                 JOptionPane.showMessageDialog(treinoView, "O nome do treino deve ser preenchido!");
@@ -86,6 +91,23 @@ public class TreinoController implements ActionListener {
         } else {
             JOptionPane.showMessageDialog(treinoView, "Não salvou!");
         }
+    }
+    
+    public void setCampos(Treino treino) {
+        this.treinoView.getjTextFieldId().setText(String.valueOf(treino.getId()));
+        this.treinoView.getjTextFieldNome().setText(treino.getNome());
+        ArrayList<ListTreino> listaTreino = this.listTreinoDAO.listar(treino.getId());
+        this.model = (DefaultTableModel) this.treinoView.getjTableListTreino().getModel();
+
+        this.model.setNumRows(0);
+
+        for (ListTreino listTreino : listaTreino) {
+            this.model.addRow(new Object[]{listTreino.getIdTreino(),listTreino.getIdExercicio(), listTreino.getNome(), listTreino.getTipo()});
+        }
+        this.treinoView.getjTextFieldNome().setEnabled(false);
+        this.treinoView.getjButtonSalvarTreino().setEnabled(false);
+        this.treinoView.getjButtonAdicionarExercicio().setEnabled(true);
+        this.treinoView.getjButtonExcluir().setEnabled(true);
     }
     
 }

@@ -4,15 +4,44 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class DiarioDeTreinoView extends javax.swing.JFrame {
 
     public DiarioDeTreinoView() {
         initComponents();
+        this.jTextFieldidDiario.setVisible(false);
+        this.jTextFieldIdTreino.setVisible(false);
+        Utilidades.Utilidades.centralizarFrame(this);
+        this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/treinoDiario.png"));
     }
 
     public JButton getjButtonAdicionarTreino() {
         return jButtonAdicionarTreino;
+    }
+
+    public JTextField getjTextFieldIdTreino() {
+        return jTextFieldIdTreino;
+    }
+
+    public void setjTextFieldIdTreino(JTextField jTextFieldIdTreino) {
+        this.jTextFieldIdTreino = jTextFieldIdTreino;
+    }
+
+    public JButton getjButtonSalvarListDiario() {
+        return jButtonSalvarListDiario;
+    }
+
+    public JTextField getjTextFieldidDiario() {
+        return jTextFieldidDiario;
+    }
+
+    public void setjTextFieldidDiario(JTextField jTextFieldidDiario) {
+        this.jTextFieldidDiario = jTextFieldidDiario;
+    }
+
+    public void setjButtonSalvarListDiario(JButton jButtonSalvarListDiario) {
+        this.jButtonSalvarListDiario = jButtonSalvarListDiario;
     }
 
     public void setjButtonAdicionarTreino(JButton jButtonAdicionarTreino) {
@@ -73,6 +102,9 @@ public class DiarioDeTreinoView extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableListDiario = new javax.swing.JTable();
         jButtonSalvarDiario = new javax.swing.JButton();
+        jButtonSalvarListDiario = new javax.swing.JButton();
+        jTextFieldidDiario = new javax.swing.JTextField();
+        jTextFieldIdTreino = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Diário de Treino");
@@ -126,6 +158,9 @@ public class DiarioDeTreinoView extends javax.swing.JFrame {
         jButtonSalvarDiario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save.png"))); // NOI18N
         jButtonSalvarDiario.setText("Salvar Diário");
 
+        jButtonSalvarListDiario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save.png"))); // NOI18N
+        jButtonSalvarListDiario.setText("Salvar Lista de Exercícios");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,20 +171,26 @@ public class DiarioDeTreinoView extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelData)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextFieldData, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabelObs))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonAdicionarTreino)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonExcluir))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonSalvarDiario)))
+                        .addComponent(jButtonSalvarListDiario))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelObs)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelData)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jFormattedTextFieldData, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonSalvarDiario)
+                                .addGap(26, 26, 26)
+                                .addComponent(jTextFieldidDiario, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldIdTreino, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -158,7 +199,10 @@ public class DiarioDeTreinoView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabelData)
-                    .addComponent(jFormattedTextFieldData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextFieldData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonSalvarDiario)
+                    .addComponent(jTextFieldidDiario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldIdTreino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelObs)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -169,8 +213,8 @@ public class DiarioDeTreinoView extends javax.swing.JFrame {
                     .addComponent(jButtonExcluir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonSalvarDiario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonSalvarListDiario)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -181,6 +225,7 @@ public class DiarioDeTreinoView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAdicionarTreino;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonSalvarDiario;
+    private javax.swing.JButton jButtonSalvarListDiario;
     private javax.swing.JFormattedTextField jFormattedTextFieldData;
     private javax.swing.JLabel jLabelData;
     private javax.swing.JLabel jLabelObs;
@@ -188,5 +233,7 @@ public class DiarioDeTreinoView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTableListDiario;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextFieldIdTreino;
+    private javax.swing.JTextField jTextFieldidDiario;
     // End of variables declaration//GEN-END:variables
 }

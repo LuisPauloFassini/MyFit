@@ -41,22 +41,22 @@ public class FichaTecnicaController implements ActionListener {
     public boolean validaTela() {
         boolean valido = true;
         
-        if (this.fichaTecnicaView.getjFormattedTextFieldData().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldAltura().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldPeso().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldPercGordura().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldAbdomen().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldTorax().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldCintura().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldQuadril().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldAnteDir().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldAnteEsq().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldBracoDireito().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldBracoEsq().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldCoxaDir().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldCoxaEsq().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldPantDir().getText().equals("")) valido = false;
-        if (this.fichaTecnicaView.getjFormattedTextFieldPantEsq().getText().equals("")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldData().getText().equals("  /  /    ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldAltura().getText().equals("   ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldPeso().getText().equals("   .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldPercGordura().getText().equals("  .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldAbdomen().getText().equals("   .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldTorax().getText().equals("   .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldCintura().getText().equals("   .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldQuadril().getText().equals("   .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldAnteDir().getText().equals("  .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldAnteEsq().getText().equals("  .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldBracoDireito().getText().equals("  .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldBracoEsq().getText().equals("  .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldCoxaDir().getText().equals("   .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldCoxaEsq().getText().equals("   .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldPantDir().getText().equals("   .  ")) valido = false;
+        if (this.fichaTecnicaView.getjFormattedTextFieldPantEsq().getText().equals("   .  ")) valido = false;
         
         return valido;
     }

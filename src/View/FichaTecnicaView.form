@@ -28,16 +28,9 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jButtonSalvar" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="jPanelDadosGerais" linkSize="7" alignment="2" max="32767" attributes="0"/>
-                          <Component id="jPanelPerimetros" linkSize="7" alignment="2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jPanelDadosGerais" linkSize="7" alignment="2" max="32767" attributes="0"/>
+                      <Component id="jPanelPerimetros" linkSize="7" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabelData" min="-2" max="-2" attributes="0"/>
@@ -45,9 +38,13 @@
                       <Component id="jFormattedTextFieldData" min="-2" pref="83" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButtonPesquisar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButtonSalvar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -202,7 +199,7 @@
                               <Component id="jFormattedTextFieldAbdomen" linkSize="1" min="-2" pref="63" max="-2" attributes="0"/>
                               <Component id="jFormattedTextFieldQuadril" linkSize="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
@@ -215,7 +212,6 @@
                               <Component id="jFormattedTextFieldTorax" linkSize="1" max="32767" attributes="0"/>
                               <Component id="jFormattedTextFieldCintura" min="-2" pref="63" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jPanelBraco" alignment="0" max="32767" attributes="0"/>
                       <Component id="jPanelAnteBraco" alignment="0" max="32767" attributes="0"/>
@@ -363,7 +359,7 @@
             <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldAnteEsq">
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="###.##" subtype="-1" type="5"/>
+                  <Format format="##.##" subtype="-1" type="5"/>
                 </Property>
               </Properties>
             </Component>
@@ -451,12 +447,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jFormattedTextFieldCoxaDir" min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="jFormattedTextFieldCoxaDir" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jFormattedTextFieldCoxaEsq" min="-2" pref="68" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

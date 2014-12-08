@@ -4,6 +4,8 @@ import Factory.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class TreinoDAO {
     
@@ -28,6 +30,36 @@ public class TreinoDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return false;
+        }
+    }
+    
+    public ArrayList<Treino> listar(String nome) {
+        ArrayList<Treino> listaTreino = new ArrayList<>();
+        String sql = "select * from treino where nome like ?";
+
+        try {
+            // Cria a PreparedStatement com o SQL
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            
+            stmt.setString(1, "%" + nome + "%");
+            
+            //Executa a query de seleção
+            ResultSet rs = stmt.executeQuery();   
+
+            while (rs.next()) {  
+                Treino treino = new Treino();
+                treino.setId(rs.getInt("Id"));
+                treino.setNome(rs.getString("Nome"));
+               
+
+                listaTreino.add(treino);
+            }  
+
+            return listaTreino;            
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
     

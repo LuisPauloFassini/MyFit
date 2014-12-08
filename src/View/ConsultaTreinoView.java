@@ -7,9 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-public class ConsultaExerciciosView extends javax.swing.JDialog {
+public class ConsultaTreinoView extends javax.swing.JDialog {
 
-    public ConsultaExerciciosView() {
+    public ConsultaTreinoView() {
         initComponents();
         this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/lupa.png"));
         Utilidades.Utilidades.centralizarDialog(this);
@@ -31,12 +31,12 @@ public class ConsultaExerciciosView extends javax.swing.JDialog {
         this.jButtonPesquisar = jButtonPesquisar;
     }
 
-    public JTable getjTableExercicios() {
-        return jTableExercicios;
+    public JTable getjTableTreinos() {
+        return jTableTreinos;
     }
 
-    public void setjTableExercicios(JTable jTable1) {
-        this.jTableExercicios = jTable1;
+    public void setjTableTreinos(JTable jTable1) {
+        this.jTableTreinos = jTable1;
     }
 
     public JTextField getjTextFieldNome() {
@@ -56,11 +56,11 @@ public class ConsultaExerciciosView extends javax.swing.JDialog {
         jTextFieldNome = new javax.swing.JTextField();
         jButtonPesquisar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableExercicios = new javax.swing.JTable();
+        jTableTreinos = new javax.swing.JTable();
         jButtonConfirma = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Consulta de Exercícios");
+        setTitle("Consulta de Treino");
         setResizable(false);
 
         jPanelPesquisar.setBorder(javax.swing.BorderFactory.createTitledBorder("Pesquisar"));
@@ -95,19 +95,19 @@ public class ConsultaExerciciosView extends javax.swing.JDialog {
 
         jPanelPesquisarLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButtonPesquisar, jLabelNome, jTextFieldNome});
 
-        jTableExercicios.setModel(new javax.swing.table.DefaultTableModel(
+        jTableTreinos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Nome", "Tipo", "Ativo"
+                "Id", "Nome"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -118,7 +118,7 @@ public class ConsultaExerciciosView extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTableExercicios);
+        jScrollPane1.setViewportView(jTableTreinos);
 
         jButtonConfirma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/confirmar.png"))); // NOI18N
         jButtonConfirma.setText("Confirmar");
@@ -158,7 +158,7 @@ public class ConsultaExerciciosView extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JPanel jPanelPesquisar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableExercicios;
+    private javax.swing.JTable jTableTreinos;
     private javax.swing.JTextField jTextFieldNome;
     // End of variables declaration//GEN-END:variables
 }

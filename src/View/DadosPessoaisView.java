@@ -9,6 +9,8 @@ public class DadosPessoaisView extends javax.swing.JFrame {
 
     public DadosPessoaisView() {
         initComponents();
+        this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/meusDados.png"));
+        Utilidades.Utilidades.centralizarFrame(this);
     }
 
     public JTextField getjTextFieldNome() {

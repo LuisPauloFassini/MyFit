@@ -67,6 +67,9 @@ public class CadastroExercicioView extends javax.swing.JFrame {
 
     public CadastroExercicioView() {
         initComponents();
+        
+        Utilidades.Utilidades.centralizarFrame(this);
+        this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/biceps.png"));
     }
 
     @SuppressWarnings("unchecked")
@@ -85,6 +88,7 @@ public class CadastroExercicioView extends javax.swing.JFrame {
         jButtonLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabelNome.setText("Nome:");
 

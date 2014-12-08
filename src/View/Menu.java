@@ -18,11 +18,15 @@ public class Menu extends javax.swing.JFrame {
 
     public Menu() {
         initComponents();
+        this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/Fitness3.png"));
+        Utilidades.Utilidades.centralizarFrame(this);
     }
     
     public Menu(Usuario usuario) {
         initComponents();
         this.usuario = usuario;
+        this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/Fitness3.png"));
+        Utilidades.Utilidades.centralizarFrame(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -148,6 +152,10 @@ public class Menu extends javax.swing.JFrame {
     private void jCadDiarioTreiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCadDiarioTreiMenuItemActionPerformed
         DiarioDeTreinoView diarioView = new DiarioDeTreinoView();
         DiarioDeTreinoController diarioController = new DiarioDeTreinoController(diarioView);
+        diarioController.getDiarioDeTreinoView().getjButtonAdicionarTreino().setEnabled(false);
+        diarioController.getDiarioDeTreinoView().getjButtonExcluir().setEnabled(false);
+        diarioController.getDiarioDeTreinoView().getjTableListDiario().setEnabled(false);
+        diarioController.getDiarioDeTreinoView().getjButtonSalvarListDiario().setEnabled(false);
         diarioController.getDiarioDeTreinoView().setVisible(true);
     }//GEN-LAST:event_jCadDiarioTreiMenuItemActionPerformed
 

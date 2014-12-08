@@ -8,6 +8,8 @@ public class TreinoView extends javax.swing.JFrame {
 
     public TreinoView() {
         initComponents();
+        Utilidades.Utilidades.centralizarFrame(this);
+        this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/Execicios2.png"));
     }
 
     @SuppressWarnings("unchecked")

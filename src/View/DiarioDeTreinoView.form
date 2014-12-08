@@ -31,24 +31,30 @@
                   <Component id="jScrollPane3" alignment="1" pref="620" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabelData" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jFormattedTextFieldData" min="-2" pref="69" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabelObs" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <Component id="jButtonAdicionarTreino" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jButtonExcluir" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jButtonSalvarDiario" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonSalvarListDiario" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelObs" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabelData" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jFormattedTextFieldData" min="-2" pref="87" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButtonSalvarDiario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jTextFieldidDiario" min="-2" pref="110" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jTextFieldIdTreino" min="-2" pref="170" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -62,6 +68,9 @@
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="jLabelData" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="jFormattedTextFieldData" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonSalvarDiario" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldidDiario" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldIdTreino" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabelObs" min="-2" max="-2" attributes="0"/>
@@ -74,8 +83,8 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane3" min="-2" pref="206" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButtonSalvarDiario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButtonSalvarListDiario" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -197,6 +206,18 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Salvar Di&#xe1;rio"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonSalvarListDiario">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Images/save.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Salvar Lista de Exerc&#xed;cios"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldidDiario">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldIdTreino">
     </Component>
   </SubComponents>
 </Form>

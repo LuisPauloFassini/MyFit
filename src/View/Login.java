@@ -7,6 +7,8 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/Fitness3.png"));
+        Utilidades.Utilidades.centralizarFrame(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -104,6 +106,7 @@ public class Login extends javax.swing.JFrame {
         valida = usuDAO.validaLogin(this.jTextFieldLogin.getText(), this.jPasswordFieldSenha.getText());
         if (valida) {
             Menu menu = new Menu(usuDAO.getUsuario());
+            menu.setSize(850, 631);
             menu.setVisible(true);
             this.dispose();
         } else {

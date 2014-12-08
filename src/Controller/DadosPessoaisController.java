@@ -29,6 +29,7 @@ public class DadosPessoaisController implements ActionListener{
             if (validaSenha()) {
                 this.usuarioDAO.alterarSenha(this.dadosPessoaisView.getjTextFieldLogin().getText(), this.dadosPessoaisView.getjPasswordFieldAntiga().getText(), this.dadosPessoaisView.getjPasswordFieldNova().getText());
                 JOptionPane.showMessageDialog(dadosPessoaisView, "Senha alterada com sucesso!");
+                this.dadosPessoaisView.dispose();
             }
         }
     }

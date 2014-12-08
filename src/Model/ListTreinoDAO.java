@@ -3,7 +3,9 @@ package Model;
 import Factory.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ListTreinoDAO {
     private Connection connection;
@@ -30,6 +32,38 @@ public class ListTreinoDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return false;
+        }
+    }
+     
+    public ArrayList<ListTreino> listar(int idTreino) {
+        ArrayList<ListTreino> listaTreino = new ArrayList<>();
+        String sql = "select * from listtreino where idTreino=?";
+
+        try {
+            // Cria a PreparedStatement com o SQL
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            
+            stmt.setInt(1, idTreino);
+            
+            //Executa a query de seleção
+            ResultSet rs = stmt.executeQuery();   
+
+            while (rs.next()) {  
+                ListTreino listTreino = new ListTreino();
+                listTreino.setIdTreino(rs.getInt("idTreino"));
+                listTreino.setIdExercicio(rs.getInt("idExercicio"));
+                listTreino.setNome(rs.getString("Nome"));
+                listTreino.setTipo(rs.getString("tipoMemb"));
+               
+
+                listaTreino.add(listTreino);
+            }  
+
+            return listaTreino;            
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
     

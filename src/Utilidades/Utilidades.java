@@ -44,7 +44,7 @@ public class Utilidades {
         obj.setLocation(dimension.width/2-obj.getSize().width/2, dimension.height/2-obj.getSize().height/2);
     }
     
-    //Função utilizada para incluir um ícone na tela
+    //Função utilizada para incluir um ícone na tela 
     public static Image adicionarIcone (String sIcone) {
         return (Toolkit.getDefaultToolkit().getImage(System.getProperty("user.dir") + sIcone));
     }

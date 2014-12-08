@@ -6,6 +6,8 @@ public class ConsultaFichaTecnicaView extends javax.swing.JFrame {
 
     public ConsultaFichaTecnicaView() {
         initComponents();
+        this.setIconImage(Utilidades.Utilidades.adicionarIcone("/src/Images/lupa.png"));
+        Utilidades.Utilidades.centralizarFrame(this);
     }
 
     @SuppressWarnings("unchecked")
