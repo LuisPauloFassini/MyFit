@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="902541b4-9e8c-4151-8cfd-83f5ba392b10">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="64"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM fichatec]]>
+	</queryString>
+	<field name="dtCri" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="altura" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="peso" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="percGordura" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="abdomen" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="torax" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quadril" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cintura" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="antDir" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="antEsq" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bracoDir" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bracoEsq" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="coxaDir" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="coxaEsq" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pantDir" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pantEsq" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="dtCri">
+		<groupExpression><![CDATA[$F{dtCri}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="50daeb60-9d76-4f5b-8b00-8a470aadf3b3"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Data:]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="42b8f836-281c-4a37-a8ef-9d77f0d7e3d0"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dtCri}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="c4c51f4e-f03c-4901-80bb-6cc6fc4048eb"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="e78e796e-0626-4dc9-b3ca-a49eb9c60944"/>
+				<staticText>
+					<reportElement x="20" y="20" width="555" height="43" forecolor="#FFFFFF" uuid="cb68873c-d2da-407f-af8a-6360b37db156"/>
+					<textElement textAlignment="Center">
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Relação das Fichas Técnicas]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="ef1d93c9-c2ab-40e0-8fa4-d8209a4878de"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="292">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="66" y="17" width="58" height="20" uuid="294d9f76-a07e-460f-b499-564e0aac9311"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{altura}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="211" y="17" width="63" height="20" uuid="85e595c7-0ef4-4902-9771-7f7624de709d"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{peso}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="468" y="17" width="58" height="20" uuid="a3c73d8a-5128-438b-a35c-5823e8416a24"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{percGordura}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="224" y="81" width="57" height="20" uuid="bd429717-bce8-4762-a6a4-1bce90fb773e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{torax}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="349" y="81" width="53" height="20" uuid="bf097c77-412a-4785-a740-341838ea6e1a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quadril}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="470" y="81" width="48" height="20" uuid="a04b87cf-b601-43a8-bb8f-307800a4534c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cintura}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="13" y="17" width="53" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="4c97ae5b-d42b-4783-ab59-c3e0e97df16f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Altura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="174" y="17" width="37" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="7c1ff699-7425-4ee1-9c98-9d74c7fe6afd"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="310" y="17" width="158" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="83029706-a18e-40aa-a1ba-f5f5e6964ad1"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Percentual de Gordura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="39" y="81" width="72" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="ab07cb53-19aa-430f-84c3-17dfe0e868d2"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Abdomen:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="111" y="81" width="53" height="20" uuid="7d76a7fd-446a-42be-8be8-25002cea758d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{abdomen}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="124" y="17" width="16" height="20" uuid="e5e44444-21a7-4ee9-a332-2fd1b4af525b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[cm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="17" width="16" height="20" uuid="40fb3956-c8aa-42b6-a511-1f3bad23c913"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="526" y="17" width="16" height="20" uuid="183a2e04-0b95-4eb8-bdc0-babedc486f02"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<line>
+				<reportElement x="27" y="68" width="502" height="1" uuid="4e4a764d-4f8c-4187-beb8-8b9ba9e4f92a"/>
+			</line>
+			<line>
+				<reportElement x="27" y="276" width="502" height="1" uuid="3bef6dbb-b5b6-461e-b916-22d7d676a98f"/>
+			</line>
+			<line>
+				<reportElement x="529" y="69" width="1" height="207" uuid="f7a072b8-f425-4093-bcfa-5df41ec55170"/>
+			</line>
+			<line>
+				<reportElement x="26" y="69" width="1" height="207" uuid="722d46a7-9442-47b0-91a2-2956d84651d5"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="26" y="48" width="122" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="3ee7f480-1367-44d7-92a5-0957d02c26db"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Perímetros (cm):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="175" y="81" width="47" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="ac60fdd2-88eb-4929-84e0-2d850f9c27dc"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Torax:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="291" y="81" width="58" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="e990b423-2812-4214-9778-062f9a508016"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quadril:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="407" y="81" width="63" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="b11e6ebb-08d0-4966-8df2-bc796d932fc2"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cintura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="53" y="106" width="85" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="f255d869-0f68-41a5-a7ba-d928207a27ef"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Antebraço:]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="53" y="126" width="210" height="55" uuid="39c948ca-2fe9-4d80-879a-b82c17021ce9"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="74" y="155" width="75" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="2ca38d62-6880-4cac-b9f7-3d714d5c1231"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esquerdo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="130" width="64" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="507e2396-5dc6-497c-80f6-9640d4b3ac36"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direito:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="149" y="130" width="93" height="20" uuid="6be58cd5-c1d9-465e-9116-ed6fcdfb9a90"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{antDir}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="149" y="153" width="93" height="20" uuid="b2fa1af8-e1a9-43df-9870-b6442cbbe74c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{antEsq}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="297" y="106" width="85" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="f5ad881b-4456-4168-a114-9fe78ca50f0b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Braço:]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="291" y="126" width="210" height="55" uuid="f88f0ece-61a7-4cf2-a681-ffa28ca1ff76"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="322" y="130" width="64" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="5fd2a636-7b4d-4f11-9a18-14358035d812"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direito:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="317" y="157" width="75" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="0348a0e3-7ed0-4c27-86b4-2a5e362d12a9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esquerdo:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="390" y="129" width="90" height="20" uuid="2482eda5-ed24-4a5d-85c3-d49ddf88f465"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bracoDir}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="391" y="156" width="89" height="20" uuid="18b51e67-128f-4f0b-bbd1-55bcb2bcf9b2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bracoEsq}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="51" y="209" width="210" height="55" uuid="30f66bd2-ae10-48f7-9885-b4c1d5f3c6c2"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="44" y="189" width="85" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="088ea107-3494-4a44-9c23-53a3efaca470"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Coxa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="77" y="215" width="64" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="e9a9fd50-c6b9-468b-8862-38056aba2d03"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direito:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="71" y="240" width="75" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="a2174aee-7b8e-43b0-b099-91823b331f29"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esquerdo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="297" y="189" width="85" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="e770013b-09ba-4ab8-be60-d3fefb47560a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Panturilha:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="146" y="215" width="95" height="20" uuid="29ee94c3-8f68-4a62-b42e-5d11ea811931"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coxaDir}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="146" y="240" width="95" height="20" uuid="59e5c315-cc2b-4a39-9a46-12453fdbe3b1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coxaEsq}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="292" y="209" width="210" height="55" uuid="6a170edd-bc42-4f66-9f0a-69902c1ec658"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="321" y="215" width="64" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="54276048-1c9d-4389-939a-4061344a580b"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direito:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="316" y="240" width="75" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="2eac8f9f-c280-49a3-a13d-31abe9d535d1"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esquerdo:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="390" y="214" width="87" height="20" uuid="8e5782e2-2f1a-45d4-bb9d-26c903b535ef"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pantDir}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="390" y="240" width="87" height="20" uuid="6f616891-4a56-4912-98ab-561ba2e8e36e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pantEsq}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="9566e2bd-0dad-450e-a00a-fcc0727ade8a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="204e5380-7102-406b-86ee-29ab3901e25a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="c0483839-4dc8-4073-81e1-e850802f3806"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

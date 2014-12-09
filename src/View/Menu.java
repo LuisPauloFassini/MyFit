@@ -5,12 +5,26 @@ import Controller.DadosPessoaisController;
 import Controller.DiarioDeTreinoController;
 import Controller.FichaTecnicaController;
 import Controller.TreinoController;
+import Factory.ConnectionFactory;
 import Model.Exercicio;
 import Model.FichaTecnica;
 import Model.Treino;
 import Model.Usuario;
 import java.awt.Image;
+import java.net.URL;
+import java.security.Principal;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Menu extends javax.swing.JFrame {
     
@@ -46,6 +60,9 @@ public class Menu extends javax.swing.JFrame {
         jDiarioMenu = new javax.swing.JMenu();
         jCadDiarioTreiMenuItem = new javax.swing.JMenuItem();
         jRelatoriosMenu = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyFit");
@@ -127,6 +144,26 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(jDiarioMenu);
 
         jRelatoriosMenu.setText("Relatórios");
+
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/print.png"))); // NOI18N
+        jMenuItem1.setText("Relação de Fichas Técnicas");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jRelatoriosMenu.add(jMenuItem1);
+        jRelatoriosMenu.add(jSeparator1);
+
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/print.png"))); // NOI18N
+        jMenuItem2.setText("Evolução do Corpo");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jRelatoriosMenu.add(jMenuItem2);
+
         jMenuBar1.add(jRelatoriosMenu);
 
         setJMenuBar(jMenuBar1);
@@ -190,6 +227,26 @@ public class Menu extends javax.swing.JFrame {
         treinoController.getTreinoView().setVisible(true);
     }//GEN-LAST:event_jCadTreinoMenuItemActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        try {
+            Utilidades.Utilidades.ImprimeRelatorio("/src/Relatorios/fichasTecnicas.jasper");
+        } catch (JRException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        try {
+            Utilidades.Utilidades.ImprimeRelatorio("/src/Relatorios/evolucaoDoCorpo.jasper");
+        } catch (JRException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -224,9 +281,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jFichaTecMenuItem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu jMeusDadosMenu;
     private javax.swing.JMenuItem jMeusDadosMenuItem;
     private javax.swing.JMenu jRelatoriosMenu;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JMenu jTreinosMenu;
     // End of variables declaration//GEN-END:variables
