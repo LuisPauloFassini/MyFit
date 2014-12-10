@@ -98,7 +98,6 @@ public class DiarioDeTreinoController implements ActionListener {
     
     public void salvarListaDiarioTreino() {
         this.model = (DefaultTableModel) this.diarioView.getjTableListDiario().getModel();
-        this.listaDiarioTreinoDAO = new ListaDiarioTreinoDAO();
         
         for (int i=0; i < this.model.getRowCount(); i++) {
             Object idDiario = this.model.getValueAt(i, 0);
@@ -108,12 +107,12 @@ public class DiarioDeTreinoController implements ActionListener {
             Object repeticoes = this.model.getValueAt(i, 4);
             Object peso = this.model.getValueAt(i, 5);
             ListaDiarioTreino listaTreino = new ListaDiarioTreino();
-            listaTreino.setIdDiario(Integer.valueOf(idDiario.toString()));
-            listaTreino.setIdExercicio(Integer.valueOf(idTreino.toString()));
+            listaTreino.setIdDiario(Integer.parseInt(idDiario.toString()));
+            listaTreino.setIdExercicio(Integer.parseInt(idTreino.toString()));
             listaTreino.setNome(nome.toString());
-            listaTreino.setSerie(Integer.valueOf(series.toString()));
-            listaTreino.setRepeticoes(Integer.valueOf(repeticoes.toString()));
-            listaTreino.setPeso(Integer.valueOf(peso.toString()));
+            listaTreino.setSerie(Integer.parseInt(series.toString()));
+            listaTreino.setRepeticoes(Integer.parseInt(repeticoes.toString()));
+            listaTreino.setPeso(Integer.parseInt(peso.toString()));
             
             this.listaDiarioTreinoDAO.salvar(listaTreino);
         }

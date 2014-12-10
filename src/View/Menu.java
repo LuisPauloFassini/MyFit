@@ -63,6 +63,8 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyFit");
@@ -76,7 +78,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.setForeground(new java.awt.Color(0, 204, 204));
         jMenuBar1.setToolTipText("");
 
-        jMeusDadosMenu.setText("Meus Dados");
+        jMeusDadosMenu.setText("Dados Pessoais");
 
         jMeusDadosMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         jMeusDadosMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ficha.png"))); // NOI18N
@@ -163,6 +165,16 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         jRelatoriosMenu.add(jMenuItem2);
+        jRelatoriosMenu.add(jSeparator2);
+
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/print.png"))); // NOI18N
+        jMenuItem3.setText("Diários de Treino");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jRelatoriosMenu.add(jMenuItem3);
 
         jMenuBar1.add(jRelatoriosMenu);
 
@@ -247,6 +259,16 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        try {
+            Utilidades.Utilidades.ImprimeRelatorio("/src/Relatorios/ListaDiariosObs.jasper");
+        } catch (JRException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -283,10 +305,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu jMeusDadosMenu;
     private javax.swing.JMenuItem jMeusDadosMenuItem;
     private javax.swing.JMenu jRelatoriosMenu;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JMenu jTreinosMenu;
     // End of variables declaration//GEN-END:variables
